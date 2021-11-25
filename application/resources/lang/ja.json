@@ -179,6 +179,7 @@
     "Are you sure you want to delete this project? Once a project is deleted, all of its resources and data will be permanently deleted.": "本当にプロジェクトを削除してよろしいでしょうか？一度プロジェクトを削除すると、すべてのリソースとデータは永久に削除されます。",
     "Cancel": "閉じる",
     "Task Name": "課題名",
+    "Detail": "課題の詳細",
     "Task Kind": "種別",
     "Task Status": "状態",
     "Assigner": "担当者",
