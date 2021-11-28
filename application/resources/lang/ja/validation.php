@@ -153,6 +153,7 @@ return [
         'keyword' => 'キーワード',
         'kind' => '種別',
         'status' => '状態',
+        'comment' => 'コメント',
         'assigner' => '担当者',
         'category' => 'カテゴリー',
         'due_ate' => '期限日',
