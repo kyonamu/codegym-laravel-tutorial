@@ -7,25 +7,23 @@ use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 
 class CommentController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\CommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Project $project, Task $task)
+    public function store(CommentRequest $request, Project $project, Task $task)
     {
-        $request->validate([
-            'comment' => 'required|string|max:1000',
-        ]);
-
+        $cutComment = $request->validated();
         if (Comment::create([
             'task_id' => $task->id,
             'user_id' => $request->user()->id,
-            'comment' => $request->comment,
+            'comment' => $cutComment['comment'],
         ])) {
             $flash = ['success' => __('Comment created successfully.')];
         } else {
