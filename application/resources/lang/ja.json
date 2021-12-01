@@ -176,7 +176,6 @@
     "Project deleted successfully.": "プロジェクトを削除しました。",
     "Failed to delete the project.": "プロジェクト情報の削除に失敗しました。",
     "Comment created successfully.": "コメントを作成しました。",
-    "Failed to delete the comment.": "コメントの削除に失敗しました。",
     "Are you sure you want to delete this project?": "プロジェクトを削除しますか？",
     "Are you sure you want to delete this project? Once a project is deleted, all of its resources and data will be permanently deleted.": "本当にプロジェクトを削除してよろしいでしょうか？一度プロジェクトを削除すると、すべてのリソースとデータは永久に削除されます。",
     "Cancel": "閉じる",
