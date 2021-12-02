@@ -1,11 +1,11 @@
 @section('script')
 <script>
-    function toggleModal(event) {
+    function toggleCommentModal(event) {
         const body = document.querySelector('body');
         const modal = document.querySelectorAll('.modal');
-        const selectModal = event.currentTarget.getAttribute('data-target');
+        const selectedModal = event.currentTarget.getAttribute('data-target');
         for (let i = 0; i < modal.length; i++){
-            if(modal[i].getAttribute('data-modal') === selectModal){
+            if(modal[i].getAttribute('data-modal') === selectedModal){
                 modal[i].classList.toggle('opacity-0');
                 modal[i].classList.toggle('pointer-events-none');
                 body.classList.toggle('modal-active');
@@ -13,7 +13,7 @@
         }
     }
 
-    function taskModal(){
+    function toggleTaskModal(){
         const body = document.querySelector('body');
         const modal = document.querySelector('.modal-1');
         modal.classList.toggle('opacity-0');
@@ -21,55 +21,55 @@
         body.classList.toggle('modal-active');
     }
 
-    const overlay = document.querySelectorAll('.modal-overlay');
-    for (var i = 0; i < overlay.length; i++) {
-        overlay[i].addEventListener('click', toggleModal);
+    const commentOverlay = document.querySelectorAll('.modal-overlay');
+    for (let i = 0; i < commentOverlay.length; i++) {
+        commentOverlay[i].addEventListener('click', toggleCommentModal);
     }
 
-    const overlay1 = document.querySelector('.modal-overlay-1');
-    overlay1.addEventListener('click', taskModal);
+    const taskOverlay = document.querySelector('.modal-overlay-1');
+    taskOverlay.addEventListener('click', toggleTaskModal);
 
-    var closeModal = document.querySelectorAll('.modal-close');
-    for (var i = 0; i < closeModal.length; i++) {
-        closeModal[i].addEventListener('click', toggleModal);
+    const commentCloseModal = document.querySelectorAll('.modal-close');
+    for (let i = 0; i < commentCloseModal.length; i++) {
+        commentCloseModal[i].addEventListener('click', toggleCommentModal);
     }
 
-    var closeModal1 = document.querySelectorAll('.modal-close-1');
-    for (var i = 0; i < closeModal1.length; i++) {
-        closeModal1[i].addEventListener('click', taskModal);
+    const taskCloseModal = document.querySelectorAll('.modal-close-1');
+    for (let i = 0; i < taskCloseModal.length; i++) {
+        taskCloseModal[i].addEventListener('click', toggleTaskModal);
     }
 
-    var openModal = document.querySelectorAll('.modal-open');
-    for (var i = 0; i < openModal.length; i++) {
-        openModal[i].addEventListener('click', function(event) {
+    const commentOpenModal = document.querySelectorAll('.modal-open');
+    for (let i = 0; i < commentOpenModal.length; i++) {
+        commentOpenModal[i].addEventListener('click', function(event) {
             event.preventDefault();
-            toggleModal(event);
+            toggleCommentModal(event);
         })
     }
 
-    var openModal = document.querySelectorAll('.modal-open-1');
-    for (var i = 0; i < openModal.length; i++) {
-        openModal[i].addEventListener('click', function(event) {
+    const taskOpenModal = document.querySelectorAll('.modal-open-1');
+    for (let i = 0; i < taskOpenModal.length; i++) {
+        taskOpenModal[i].addEventListener('click', function(event) {
             event.preventDefault();
-            taskModal();
+            toggleTaskModal();
         })
     }
 
-    var deleteModal = document.querySelectorAll('.modal-delete');
-    for (var i = 0; i < deleteModal.length; i++){
-        deleteModal[i].addEventListener('click', taskModal);
+    const taskDeleteModal = document.querySelectorAll('.modal-delete');
+    for (let i = 0; i < taskDeleteModal.length; i++){
+        taskDeleteModal[i].addEventListener('click', toggleTaskModal);
     }
 
-    document.onkeydown = function(evt) {
+    document.onkeydown = function(event) {
         evt = evt || window.event;
-        var isEscape = false;
+        let isEscape = false;
         if ('key' in evt) {
             isEscape = (evt.key === 'Escape' || evt.key === 'Esc');
         } else {
             isEscape = (evt.keyCode === 27);
         }
         if (isEscape && document.body.classList.contains('modal-active')) {
-            toggleModal(evt);
+            toggleCommentModal(event);
         }
     };
 
@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        @foreach ($task->comments as $comment)
+        @foreach ($task->comments()->oldest()->get() as $comment)
             <div class="flex justify-between px-8 pt-1 mx-6 rounded-md bg-white mb-4">
                 <div>
                     <h4 class="font-black">{{ auth()->user()->name }}</h4>
