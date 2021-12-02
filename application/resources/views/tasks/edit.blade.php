@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        @foreach ($task->comments()->oldest()->get() as $comment)
+        @foreach ($task->comments as $comment)
             <div class="flex justify-between px-8 pt-1 mx-6 rounded-md bg-white mb-4">
                 <div>
                     <h4 class="font-black">{{ auth()->user()->name }}</h4>
