@@ -130,7 +130,7 @@ class Task extends Model
     }
 
     /**
-     * 課題の完了理由を取得.
+     * 課題のコメントを取得。
      */
     public function comments()
     {
