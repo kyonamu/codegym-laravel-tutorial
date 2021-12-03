@@ -175,6 +175,7 @@
     "Failed to update the project.": "プロジェクト情報の更新に失敗しました。",
     "Project deleted successfully.": "プロジェクトを削除しました。",
     "Failed to delete the project.": "プロジェクト情報の削除に失敗しました。",
+    "Comment created successfully.": "コメントを作成しました。",
     "Are you sure you want to delete this project?": "プロジェクトを削除しますか？",
     "Are you sure you want to delete this project? Once a project is deleted, all of its resources and data will be permanently deleted.": "本当にプロジェクトを削除してよろしいでしょうか？一度プロジェクトを削除すると、すべてのリソースとデータは永久に削除されます。",
     "Cancel": "閉じる",
@@ -184,6 +185,7 @@
     "Task Status": "状態",
     "Assigner": "担当者",
     "Task Category": "カテゴリー",
+    "Comment": "コメント",
     "Due Date": "期限日",
     "Task created successfully.": "課題を作成しました。",
     "Failed to create the task.": "課題情報の作成に失敗しました。",
@@ -194,7 +196,11 @@
     "Task updated successfully.": "課題情報を更新しました。",
     "Failed to update the task.": "課題情報の更新に失敗しました。",
     "Task deleted successfully.": "課題を削除しました。",
+    "Comment deleted successfully.": "コメントを削除しました。",
     "Failed to delete the task.": "課題情報の削除に失敗しました。",
+    "Failed to delete the comment.": "コメントの削除に失敗しました。",
     "Are you sure you want to delete this task?": "課題を削除しますか？",
-    "Are you sure you want to delete this task? Once a task is deleted, all of its resources and data will be permanently deleted.": "本当に課題を削除してよろしいでしょうか？一度課題を削除すると、すべてのリソースとデータは永久に削除されます。"
+    "Are you sure you want to delete this comment?": "コメントを削除しますか？",
+    "Are you sure you want to delete this task? Once a task is deleted, all of its resources and data will be permanently deleted.": "本当に課題を削除してよろしいでしょうか？一度課題を削除すると、すべてのリソースとデータは永久に削除されます。",
+    "Are you sure you want to delete this comment? Once a commnet is deleted, all of its resources and data will be permanently deleted.": "本当にコメントを削除してよろしいでしょうか？一度コメントを削除すると、すべてのリソースとデータは永久に削除されます。"
 }

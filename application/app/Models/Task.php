@@ -128,4 +128,24 @@ class Task extends Model
     {
         return $this->belongsTo(TaskResolution::class, 'task_resolution_id');
     }
+
+    /**
+     * 課題のコメントを取得。
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'asc');
+    }
+
+    /**
+     * リレーション先の論理削除
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($user) {
+            $user->comments()->delete();
+        });
+    }
 }
